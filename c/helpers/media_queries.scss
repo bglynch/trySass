@@ -1,0 +1,41 @@
+$tablet-width: 768px;
+$desktop-width: 992px;
+$large-desktop-width: 1200px;
+
+@mixin tablet{
+    @media (min-width: $tablet-width) and (max-width: $desktop-width -1){
+        @content
+    }
+}
+
+@mixin desktop{
+    @media (min-width: $desktop-width) and (max-width: $large-desktop-width -1){
+        @content
+    }
+}
+
+
+
+
+
+// difference between css and scss syntax
+/*
+// scss
+h1{
+    @media(min-width:1200px){
+        color:red;
+    }
+}
+
+// css
+@media(min-width: 1200px){
+    h1{
+        color:red;
+    }
+}
+*/
+
+
+
+
+

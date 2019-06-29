@@ -1,0 +1,65 @@
+// inital example
+/*
+@function pxToEM($value, $base) {
+  @return ($value / $base) + em;
+}
+
+h1{
+  font-size: pxToEM(32,16);
+}
+*/
+
+// adding variables
+$blue: #0997d3;
+$red: #e84610;
+$green: #bada55;
+$black: #000000;
+$white: #ffffff;
+
+$width:300px;
+$height:500px;
+
+
+// adding list
+// $colorsList: $blue, $red, $green, $black, $white
+
+// adding a map(object with key:value association) and iterate through it
+$colors: (
+  black: #000000,
+  red: #e84610,
+  green: #bada55
+);
+
+@each $key, $value in $colors{
+  .item-#{$key} {
+    background-color: $value;
+  }
+}
+
+
+
+body{
+  background-color: $black;
+}
+
+div{
+  width: $width;
+  height:$height;
+  border: 1px solid $black;
+}
+
+h1{
+  color: $white;
+}
+
+// pass a variable to a CSS class
+
+$class: container;
+
+div.#{$class}{
+  background-color: orange;
+}
+
+
+
+

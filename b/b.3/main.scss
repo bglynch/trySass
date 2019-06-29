@@ -1,0 +1,74 @@
+// example of a FOR LOOP
+$class-name: item;
+ 
+@for $i from 1 through 4 {
+  .#{$class-name}-#{$i} {
+    width: 60px + $i;
+  }
+}
+ 
+ 
+// example of an IF STATEMENT
+/*
+$random: 5;
+
+h1{
+  @if $random > 5 {
+    color: blue;
+  }
+  @else if $random == 3{
+    color: purple;
+  }
+  @else{
+    color: orange;
+  }
+}
+*/ 
+
+h1{
+  @if 1+1 == 2{
+    border: 1px solid black;
+  }
+}
+
+// create a MIXIN
+@mixin button($color, $size){
+  width: $size;
+  height: $size / 2 ;
+  border: 1px solid $color;
+  
+  // add logic
+  @if $color == #e84610{
+    color: #fff;
+  }
+  @else{
+    color:$color;
+  }
+}
+.btn {
+  @include button(#e84610, 200px)
+}
+
+
+
+@mixin unicornify(){
+  background-color: pink;
+  color: white;
+  @content; //get replaced by new passed styles
+  font-size:30px;
+  font-weight: bold;
+}
+
+p{
+  @include unicornify{
+    border: 1px solid pink;
+    border-radius: 100%;
+    text-align: center;
+  }
+}
+
+
+
+
+
+
